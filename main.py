@@ -18,8 +18,7 @@ user_params = {
     "notMinor": "yes"
 }
 
-# response = requests.post(pixela_endpoint, json=user_params)
-# print(response.text)
+response = requests.post(pixela_endpoint, json=user_params)
 
 graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 
@@ -35,8 +34,7 @@ headers = {
     "X-USER-TOKEN": TOKEN
 }
 
-# response = requests.post(graph_endpoint, json=graph_config, headers=headers)
-# print(response.text)
+response = requests.post(graph_endpoint, json=graph_config, headers=headers)
 
 pixel_creation_endpoint = f"{graph_endpoint}/{GRAPH_ID}"
 
@@ -47,8 +45,7 @@ pixel_config = {
     "quantity": input("How many kilometers did you cycle today?")
 }
 
-# response = requests.post(pixel_creation_endpoint, json=pixel_config, headers=headers)
-# print(response.text)
+response = requests.post(pixel_creation_endpoint, json=pixel_config, headers=headers)
 
 update_pixel_endpoint = f"{pixel_creation_endpoint}/20250117"
 
@@ -56,8 +53,7 @@ pixel_update = {
     "quantity": "20",
 }
 
-# response = requests.put(update_pixel_endpoint, json=pixel_update, headers=headers)
-# print(response.text)
+response = requests.put(update_pixel_endpoint, json=pixel_update, headers=headers)
 
 delete_pixel_endpoint =  f"{pixel_creation_endpoint}/20250117"
 
